@@ -19,7 +19,6 @@ def vector_sub(a, b):
 
     return result
 
-
 def vector_scalar_mul(r, a):
     result = []
 
@@ -43,13 +42,30 @@ def create_random_matrix(n, m):
     for i in range(n):
         row = []
         for i in range(m):
-            row.append(randint(0,255))
+            row.append(randint(0, 255))
         mat.append(row)
     
     return mat
 
 def matrix_vector_mul(mat, vec):
-    return []
+    result = []
+    
+    for rowIndex, rowValue in enumerate(mat):
+        result.append(0)
+        for colIndex, colValue in enumerate(rowValue):
+            result[rowIndex] += colValue * vec[colIndex]
+    
+    return result
 
 def matrix_transpose(a):
-    return []
+    result = []
+
+    cols = len(a)
+    rows = len(a[0])
+
+    for r in range(rows):
+        result.append([])
+        for c in range(cols):
+            result[r].append(a[c][r])
+            
+    return result
