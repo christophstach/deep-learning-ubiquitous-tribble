@@ -60,7 +60,6 @@ def matrix_vector_mul(mat, vec):
 def matrix_transpose(a):
     result = []
 
-    
     cols = len(a)
     rows = len(a[0])
 
