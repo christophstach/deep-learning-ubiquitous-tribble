@@ -14,6 +14,8 @@ sklearn = "*"
 jupyterlab = "*"
 scipy = "*"
 pprint = "*"
+deep-teaching-commons = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.5"
