@@ -36,7 +36,9 @@ class LeakyReLU():
         self.params = []
 
     def forward(self, X):
-        return None
+        self.X = X
+        self.alpha = 0.0001
+        return np.maximum(X, X * a)
 
     def backward(self, dout):
         return None
@@ -49,10 +51,10 @@ class sigmoid():
         self.params = []
 
     def forward(self, X):
-        return None
+        return 1 / (1 + math.exp(-X))
 
     def backward(self, dout):
-        return None
+        return self.forward(dout) * (1 - self.forward(dout))
 
 class tanh():
     ''' Description
@@ -61,8 +63,8 @@ class tanh():
         self.params = []
 
     def forward(self, X):
-        return None
+        return np.tanh(X)
 
     def backward(self, dout):
-        return None
+        return 1 - (self.forward(dout) * self.forward(dout))
 
